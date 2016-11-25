@@ -3,3 +3,4 @@ Template.post.events({
 		alert("Vous avez cliqué")
 	}
 });
+

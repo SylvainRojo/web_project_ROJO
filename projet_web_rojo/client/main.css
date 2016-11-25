@@ -1,1 +1,26 @@
 /* CSS declarations go here */
+
+body{
+	background-color: #4c4c4c;
+	color: #efeded;
+}
+
+#add,#modify,#delete{
+	text-align: left;
+}
+
+#champs1{
+	text-align: right;
+}
+
+.titlesPosts{
+	text-align: center;
+}
+
+.bouttonsActions,#champs2,#champs3,#champs4{
+	color: black;
+}
+
+.editB{
+	color: black;
+}

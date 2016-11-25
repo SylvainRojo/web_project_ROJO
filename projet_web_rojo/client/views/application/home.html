@@ -2,43 +2,69 @@
 	<h2>Accueil</h2>
 	<div class="row">
 		<div class="col-lg-4" id="add">
-		<h3>Nouveau post</h3>
+		
 
-			<form>
-				<label>Auteur</label><input type="text" name="auteur" /><br />
-				<label>Titre</label><input type="text" name="titre" /><br />
-				<label>Contenu</label><textarea name="contenu"></textarea><br />
-				<button type="submit" >Envoyer</button>
+			<form class="ajouter">
+			<h3 class="titlesPosts">Nouveau post</h3>
+				<div class="col-xs-6" id="champs1">
+					<label>Auteur</label> <br>
+					<label>Titre</label> <br>
+					<label>description</label> <br>
+				</div>
+				<div class="col-xs-6" id="champs2">
+					<input type="text" name="auteur" /> <br>
+					<input type="text" name="titre" /><br />
+					<input type="text" name="contenu"/><br />
+					<button type="submit" class="bouttonsActions">Ajouter</button>
+				</div>
+
 			</form>
 			
 		</div>
 		<div class="col-lg-4" id="modify">
-		<h3>Modifier</h3>
+		
 
 			<form>
-				<label>Auteur</label><input type="text" name="auteur" /><br />
-				<label>Titre</label><input type="text" name="titre" /><br />
-				<label>Contenu</label><textarea name="contenu"></textarea><br />
-				<button type="submit" >Envoyer</button>
+			<h3 class="titlesPosts">Modifier</h3>
+				<div class="col-xs-6" id="champs1">
+					<label>Auteur</label> <br>
+					<label>Titre</label> <br>
+					<label>description</label> <br>
+				</div>
+					<div class="col-xs-6" id="champs3">
+						<input type="text" name="auteur" class="champs2" /> <br>
+						<input type="text" name="titre" /><br />
+						<textarea name="contenu"></textarea><br />
+						<button type="submit" class="bouttonsActions" >Modifier</button>
+				</div>
 			</form>
 			
 		</div>
 		<div class="col-lg-4" id="delete">
-		<h3>Supprimer</h3>
+		
 
-			<form>
-				<label>Auteur</label><input type="text" name="auteur" /><br />
-				<label>Titre</label><input type="text" name="titre" /><br />
-				<label>Contenu</label><textarea name="contenu"></textarea><br />
-				<button type="submit" >Envoyer</button>
+			<form class="supprimer">
+			<h3 class="titlesPosts">Supprimer</h3>
+				<div class="col-xs-6" id="champs1">
+					<label>Titre</label> <br>
+					
+				</div>
+					<div class="col-xs-6" id="champs4">
+						<input type="text" name="titre" /><br />
+						<button type="submit" class="bouttonsActions" >Supprimer</button>
+				</div>
 			</form>
 			
 		</div>		
 	</div>
 	<h3>Listes des Posts</h3>
-	<ul>
+	<ul class="modifier">
 	{{#each posts}}
-		<li><b>{{ title }}</b>, par <em>{{ author }}</em></li>
+		<li>
+			<button class="editB">Edit</button>
+			<b>{{ title }}</b>, par <em>{{ author }}</em>, contenu: {{ content }}
+		</li>
+
 	{{/each}}	
 	</ul>
 </template>

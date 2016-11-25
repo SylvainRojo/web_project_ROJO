@@ -2,11 +2,22 @@ Posts = new Mongo.Collection("posts");
 
 Meteor.methods({
 	"insertPost": function(doc){
-		if (doc.author !== "Martin") {
-			throw new Meteor.Error(403, " Pas D'autorisation !");
-		}
-		else{
-			return Posts.insert(doc);
-		}
+		
+		return Posts.insert(doc);
+		
 	}
 });
+/*
+Meteor.methods({
+	"updatePost": fonction(doc){
+		return Posts.update(doc);
+	}
+});
+/*
+Posts.allow({
+	insert: function(){return true;},
+	update: function(){return true;},
+	remove: function(){return true;}
+});
+*/
+

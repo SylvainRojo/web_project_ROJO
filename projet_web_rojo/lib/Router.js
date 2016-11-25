@@ -17,6 +17,9 @@ Router.route('/', {
 	
 });
 
+Router.route('/editPosts',{
+	name: "editPosts"
+});
 
 Router.route('/posts', {
 	name: "posts",

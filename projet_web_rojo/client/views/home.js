@@ -1,5 +1,5 @@
 Template.home.events({
-	'submit form': function(e){
+	'submit .ajouter': function(e){
 		e.preventDefault();
 
 		var author = $("input[name='auteur']").val();
@@ -13,12 +13,24 @@ Template.home.events({
 		}
 
 		Meteor.call("insertPost", post, function(err,id){
-			if (err) {
-				alert(err.reason);
-			}
-			else{
+			
 				$("from input, from textarea").val("");
-			}
+			
 		});
+	},
+	
+	'submit .supprimer': function(){
+		var title = $("input[name='titre']").val();
+
+		Posts.deleteOne(title);
+	},
+/*
+	'submit .editB': function(){
+		Router.route('/editPosts',{ name: "editPosts"});
 	}
+	*/
+
 });
+
+
+
