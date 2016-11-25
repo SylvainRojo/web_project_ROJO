@@ -18,17 +18,31 @@ Template.home.events({
 			
 		});
 	},
-	
-	'submit .supprimer': function(){
-		var title = $("input[name='titre']").val();
 
-		Posts.deleteOne(title);
-	},
+
+
+	'click .editB': function(){
+
+		var title = $("input[name='titreM']").val();
+		var content = $("input[name='contenuM']").val();
 /*
-	'submit .editB': function(){
-		Router.route('/editPosts',{ name: "editPosts"});
+		Pots.findAndModify({
+			query: { _id: this._id},
+ 			update: {}
+
+		});
+*/
+		Posts.update(this._id,{$set:{
+			title:title,
+			content:content}
+		});
+
+	},
+
+	
+	'click .remove': function() {
+		Posts.remove(this._id);
 	}
-	*/
 
 });
 

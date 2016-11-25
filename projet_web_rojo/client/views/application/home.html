@@ -21,47 +21,29 @@
 			</form>
 			
 		</div>
-		<div class="col-lg-4" id="modify">
-		
+		<div class="col-lg-4" id="update">
 
-			<form>
+		<form class="updater">
 			<h3 class="titlesPosts">Modifier</h3>
 				<div class="col-xs-6" id="champs1">
-					<label>Auteur</label> <br>
 					<label>Titre</label> <br>
 					<label>description</label> <br>
 				</div>
-					<div class="col-xs-6" id="champs3">
-						<input type="text" name="auteur" class="champs2" /> <br>
-						<input type="text" name="titre" /><br />
-						<textarea name="contenu"></textarea><br />
-						<button type="submit" class="bouttonsActions" >Modifier</button>
+				<div class="col-xs-6" id="champs2">
+					<input type="text" name="titreM" /><br />
+					<input type="text" name="contenuM"/><br />
 				</div>
+
 			</form>
 			
 		</div>
-		<div class="col-lg-4" id="delete">
-		
-
-			<form class="supprimer">
-			<h3 class="titlesPosts">Supprimer</h3>
-				<div class="col-xs-6" id="champs1">
-					<label>Titre</label> <br>
-					
-				</div>
-					<div class="col-xs-6" id="champs4">
-						<input type="text" name="titre" /><br />
-						<button type="submit" class="bouttonsActions" >Supprimer</button>
-				</div>
-			</form>
-			
-		</div>		
 	</div>
 	<h3>Listes des Posts</h3>
 	<ul class="modifier">
 	{{#each posts}}
 		<li>
 			<button class="editB">Edit</button>
+			<button class="remove">Delete</button>
 			<b>{{ title }}</b>, par <em>{{ author }}</em>, contenu: {{ content }}
 		</li>
 
