@@ -1,0 +1,17 @@
+<template name='posts'>
+	<h1>Listes des Postes</h1>
+	{{#each posts}}
+		{{> post}}
+	{{/each}}
+</template>
+
+
+<template name="post">
+	<div class=post>
+		{{#if hide}}
+			Ce post est caché ma gueule !
+		{{else}}
+			{{title}}
+		{{/if}}
+	</div>	
+</template>
