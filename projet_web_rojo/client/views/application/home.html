@@ -1,16 +1,44 @@
 <template name="home">
 	<h2>Accueil</h2>
-	<h3>Nouveau post</h3>
-	<form>
-		<label>Auteur</label><input type="text" name="auteur" /><br />
-		<label>Titre</label><input type="text" name="titre" /><br />
-		<label>Contenu</label><textarea name="contenu"></textarea><br />
-		<button type="submit" >Envoyer</button>
-	</form>
+	<div class="row">
+		<div class="col-lg-4" id="add">
+		<h3>Nouveau post</h3>
+
+			<form>
+				<label>Auteur</label><input type="text" name="auteur" /><br />
+				<label>Titre</label><input type="text" name="titre" /><br />
+				<label>Contenu</label><textarea name="contenu"></textarea><br />
+				<button type="submit" >Envoyer</button>
+			</form>
+			
+		</div>
+		<div class="col-lg-4" id="modify">
+		<h3>Modifier</h3>
+
+			<form>
+				<label>Auteur</label><input type="text" name="auteur" /><br />
+				<label>Titre</label><input type="text" name="titre" /><br />
+				<label>Contenu</label><textarea name="contenu"></textarea><br />
+				<button type="submit" >Envoyer</button>
+			</form>
+			
+		</div>
+		<div class="col-lg-4" id="delete">
+		<h3>Supprimer</h3>
+
+			<form>
+				<label>Auteur</label><input type="text" name="auteur" /><br />
+				<label>Titre</label><input type="text" name="titre" /><br />
+				<label>Contenu</label><textarea name="contenu"></textarea><br />
+				<button type="submit" >Envoyer</button>
+			</form>
+			
+		</div>		
+	</div>
 	<h3>Listes des Posts</h3>
 	<ul>
 	{{#each posts}}
-		<li><b>{{ title }}</b>, par <em>{{ url }}</em></li>
+		<li><b>{{ title }}</b>, par <em>{{ author }}</em></li>
 	{{/each}}	
 	</ul>
 </template>

@@ -2,7 +2,7 @@ Template.home.events({
 	'submit form': function(e){
 		e.preventDefault();
 
-		var author = $("input[name='auter']").val();
+		var author = $("input[name='auteur']").val();
 		var title = $("input[name='titre']").val();
 		var content = $("input[name='contenu']").val();
 
@@ -12,6 +12,13 @@ Template.home.events({
 			content: content
 		}
 
-		Posts.insert(post);
+		Meteor.call("insertPost", post, function(err,id){
+			if (err) {
+				alert(err.reason);
+			}
+			else{
+				$("from input, from textarea").val("");
+			}
+		});
 	}
 });

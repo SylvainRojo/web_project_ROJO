@@ -3,7 +3,17 @@ Router.configure({
 });
 
 Router.route('/', {
-	name: 'home'
+	name: "home",
+	data: function(){
+		var posts = Posts.find();
+
+		return {
+			posts: posts
+		};
+	},
+	waitOn: function(){
+		return Meteor.subscribe("allPostHearders");
+	}
 	
 });
 
@@ -15,7 +25,7 @@ Router.route('/posts', {
 			posts: [
 				{ 
 					title: "Premier Post",
-					hide: true
+					hide: false
 				},
 				{
 					title: "Second Post",
@@ -23,7 +33,7 @@ Router.route('/posts', {
 				},
 				{
 					title: "Troisième Post",
-					hide: false
+					hide: true
 				},
 			]
 		};

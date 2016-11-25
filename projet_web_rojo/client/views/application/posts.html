@@ -9,7 +9,7 @@
 <template name="post">
 	<div class=post>
 		{{#if hide}}
-			Ce post est caché ma gueule !
+			Post caché -> {{title}}, par {{{ setAuthor }}}
 		{{else}}
 			{{title}}, par {{{ setAuthor }}}
 		{{/if}}
