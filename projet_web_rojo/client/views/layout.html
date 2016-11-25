@@ -1,6 +1,13 @@
 <template name="mainLayout">
 	<h1>Mon Site</h1>
 	<div>
+		<ul>
+			<li><a href="{{pathFor route='home'}}">Home</a></li>
+			<li><a href="{{pathFor route='posts'}}">Posts</a></li>
+		</ul>
+	</div>
+	<div>
 		{{> yield}}
+		<h1>Je te crois 100% !</h1>
 	</div>
 </template>

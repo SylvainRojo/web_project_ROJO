@@ -3,18 +3,10 @@ Router.configure({
 });
 
 Router.route('/', {
-	name: "home",
-	data: function(){
-		var posts = Posts.find();
-
-		return {
-			posts: posts
-		};
-	},
-	waitOn: function(){
-		return Meteor.subscribe("allPostHearders");
-	}
+	name: 'home'
+	
 });
+
 
 Router.route('/posts', {
 	name: "posts",
