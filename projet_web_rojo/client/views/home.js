@@ -17,6 +17,9 @@ Template.home.events({
 				$("from input, from textarea").val("");
 			
 		});
+		$("input[name='auteur']").val("");
+		$("input[name='titre']").val("");
+		$("input[name='contenu']").val("");
 	},
 
 
@@ -36,13 +39,16 @@ Template.home.events({
 			title:title,
 			content:content}
 		});
-
+		$("input[name='titreM']").val("");
+		$("input[name='contenuM']").val("");
 	},
 
 	
 	'click .remove': function() {
 		Posts.remove(this._id);
 	}
+
+
 
 });
 
